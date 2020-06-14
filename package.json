@@ -1,18 +1,16 @@
 {
-  "name": "filters",
+  "name": "template-filters",
   "version": "1.0.0",
-  "description": "Collection of filters to use in templates",
+  "description": "Collection of filters to use in several templating engines",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "node tests/test.mjs",
-    "prettier": "prettier ./*.mjs tests/*.mjs --single-quote --tab-width 4 --write --print-width 120"
+    "test": "node tests",
+    "prettier": "prettier ./*.js tests/*.js --single-quote --tab-width 4 --write --print-width 120"
   },
   "keywords": [
     "filters",
-    "templates"
+    "templates",
+    "nunjucks"
   ],
   "author": "Oscar Otero",
   "license": "MIT",
