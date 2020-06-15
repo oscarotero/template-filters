@@ -15,7 +15,7 @@ Add filters to, for example, a [11ty](https://www.11ty.dev/docs/filters/) static
 eleventyConfig.addFilter('attributes', require('template-filters/attributes'));
 ```
 
-## className
+### className
 
 To generate classNames attributes:
 
@@ -29,7 +29,7 @@ Render to:
 <div class="foo bar">
 ```
 
-## attributes
+### attributes
 
 To generate html attributes:
 
@@ -43,16 +43,14 @@ Render to:
 <div hidden class="foo bar">
 ```
 
-## get
-
-To get only some keys from an object. Usefult to combine with attributes:
+Use arguments to filter attributes:
 
 ```njk
-<div {{ data | get('class', 'id', 'hidden') | attributes }}">
+<div {{ { hidden: true, name: 'foo', id: 'bar'} | attributes('hidden', 'id') | safe }}">
 ```
 
 Render to:
 
 ```njk
-<div hidden class="foo bar">
+<div hidden id="bar">
 ```

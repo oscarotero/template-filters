@@ -7,12 +7,12 @@ const escapeChars = {
     "'": '&#39;',
 };
 
-module.exports = function attributes(...attributes) {
+module.exports = function attributes(attributes, ...names) {
     const values = {};
 
-    attributes.forEach((attribute) => handle(values, attribute));
+    handle(values, attributes);
 
-    return join(values);
+    return names.length ? join(filter(values, names)) : join(values);
 };
 
 function handle(values, name) {
@@ -100,4 +100,16 @@ function join(attributes) {
 
 function escape(value) {
     return value.replace(/[&<>'"]/g, (match) => escapeChars[match]);
+}
+
+function filter(attributes, names) {
+    const filtered = {};
+
+    names.forEach((name) => {
+        if (name in attributes) {
+            filtered[name] = attributes[name];
+        }
+    });
+
+    return filtered;
 }
