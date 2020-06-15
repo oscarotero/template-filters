@@ -16,5 +16,9 @@ assert.equal('required class="foo bar"', attributes(['required', { class: ['foo'
 assert.equal('required class="foo bar"', attributes({ required: true }, { class: ['foo', { bar: true }] }));
 assert.equal('required class="foo bar"', attributes([{ required: true }, { class: ['foo', { bar: true }] }]));
 assert.equal('required class="foo bar"', attributes({ required: true, class: ['foo', { bar: true }] }));
+assert.equal(
+    'required class="foo bar"',
+    attributes(['required', { class: 'foo' }, { class: ['bar', { other: false }] }])
+);
 
 console.log('attributes OK');
