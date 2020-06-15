@@ -1,6 +1,6 @@
 {
   "name": "template-filters",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Collection of filters to use in several templating engines",
   "main": "index.js",
   "scripts": {
