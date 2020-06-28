@@ -54,3 +54,38 @@ Render to:
 ```njk
 <div hidden id="bar">
 ```
+
+### markdown
+
+A wrapper of [markdown-it](https://github.com/markdown-it/markdown-it) to markdownify texts.
+
+```js
+const markdownFilter = require('template-filters/markdown');
+const MarkdownIt = require('markdown-it');
+
+const markdown = markdownFilter(new MarkdownIt());
+
+markdown('Hello **world**');
+```
+
+```njk
+{{ 'Hello **world**' | markdown | safe }}
+```
+
+Render to:
+
+```njk
+<p>Hello <strong>world</strong></p>
+```
+
+Set true to render an inline version
+
+```njk
+<h1>{{ 'Hello **world**' | markdown(true) | safe }}</h1>
+```
+
+Render to:
+
+```njk
+<h1>Hello <strong>world</strong></h1>
+```

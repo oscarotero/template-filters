@@ -1,7 +1,7 @@
 {
   "name": "template-filters",
-  "version": "0.2.0",
-  "description": "Collection of filters to use in several templating engines",
+  "version": "0.2.1",
+  "description": "Collection of filters to use in any templating engine like Nunjucks, Liquid, Handlebars etc",
   "main": "index.js",
   "scripts": {
     "test": "node tests",
@@ -10,11 +10,15 @@
   "keywords": [
     "filters",
     "templates",
-    "nunjucks"
+    "nunjucks",
+    "className",
+    "attributes",
+    "markdown"
   ],
   "author": "Oscar Otero",
   "license": "MIT",
   "devDependencies": {
+    "markdown-it": "^11.0.0",
     "prettier": "^2.0.5"
   }
 }
