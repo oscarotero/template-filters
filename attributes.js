@@ -33,7 +33,7 @@ function handle(values, name) {
     for (let [key, value] of Object.entries(name)) {
         if (multipleArgs.includes(key)) {
             addMultiple(values, key, value);
-            return;
+            continue;
         }
 
         values[key] = value;

@@ -1,6 +1,6 @@
 {
   "name": "template-filters",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Collection of filters to use in any templating engine like Nunjucks, Liquid, Handlebars etc",
   "main": "index.js",
   "scripts": {
